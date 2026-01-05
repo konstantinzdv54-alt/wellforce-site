@@ -9,8 +9,17 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #0b1220;
   color: #e5e7eb;
+  background: #0b1220;
+}
+
+/* HERO WITH OIL RIG BACKGROUND */
+.hero {
+  background:
+    linear-gradient(rgba(11,18,32,0.85), rgba(11,18,32,0.85)),
+    url("https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
@@ -32,19 +41,14 @@ h2 {
 }
 
 h3 {
-  margin-top: 0;
   color: #f8fafc;
+  margin-top: 0;
 }
 
 p {
   font-size: 18px;
   line-height: 1.6;
   max-width: 800px;
-}
-
-a {
-  color: #38bdf8;
-  text-decoration: none;
 }
 
 .btn {
@@ -55,6 +59,8 @@ a {
   color: #020617;
   font-weight: bold;
   border-radius: 6px;
+  cursor: pointer;
+  border: none;
 }
 
 .grid {
@@ -82,6 +88,28 @@ ul li {
   margin-bottom: 10px;
 }
 
+/* FORM */
+form {
+  max-width: 500px;
+  margin-top: 30px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 footer {
   margin-top: 100px;
   font-size: 14px;
@@ -94,52 +122,46 @@ footer {
 
 <body>
 
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <h1>Unlocking production without CAPEX</h1>
+    <p>Independent production optimization for mature oil wells.</p>
+
+    <p>
+      WELLFORCE is an independent consulting firm helping oil operators
+      increase production on mature wells through data-driven analysis
+      and operational optimization — without capital expenditures.
+    </p>
+
+    <p>
+      We apply the proprietary NODEO Framework to identify hidden potential,
+      optimize operating regimes, and deliver clear economic impact.
+    </p>
+
+    <button class="btn"
+      onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Request a short discussion
+    </button>
+  </div>
+</div>
+
 <div class="container">
-
-  <!-- HERO -->
-  <h1>Unlocking production without CAPEX</h1>
-  <p>Independent production optimization for mature oil wells.</p>
-
-  <p>
-    WELLFORCE is an independent consulting firm helping oil operators
-    increase production on mature wells through data-driven analysis
-    and operational optimization — without capital expenditures.
-  </p>
-
-  <p>
-    We apply the proprietary NODEO Framework to identify hidden potential,
-    optimize operating regimes, and deliver clear economic impact.
-  </p>
-
-  <a class="btn" href="mailto:info@wellforce.energy">
-    Request a short discussion
-  </a>
 
   <!-- WHAT WE DO -->
   <h2>What We Do</h2>
   <div class="grid">
     <div class="card">
       <h3>Production Audits</h3>
-      <p>
-        Fast 7–14 day independent review of mature oil wells
-        to identify hidden production potential.
-      </p>
+      <p>7–14 day independent review of mature oil wells.</p>
     </div>
-
     <div class="card">
       <h3>No CAPEX Optimization</h3>
-      <p>
-        Operational and data-driven improvements
-        without additional capital investments.
-      </p>
+      <p>Operational improvements without new investments.</p>
     </div>
-
     <div class="card">
       <h3>Clear Economics</h3>
-      <p>
-        Each recommendation is supported by production scenarios
-        and clear economic impact.
-      </p>
+      <p>Each recommendation includes economic impact.</p>
     </div>
   </div>
 
@@ -147,8 +169,8 @@ footer {
   <h2>How We Work</h2>
   <p>
     We apply the proprietary <strong>NODEO Framework</strong>
-    to systematically analyze production systems, identify constraints,
-    and prioritize optimization actions with clear economic outcomes.
+    to analyze production systems, identify constraints,
+    and prioritize optimization actions.
   </p>
 
   <div class="grid">
@@ -170,15 +192,16 @@ footer {
   </ul>
 
   <!-- CONTACT -->
-  <h2>Contact</h2>
-  <p>
-    Email: <a href="mailto:info@wellforce.energy">info@wellforce.energy</a><br>
-    Location: Kazakhstan / International
-  </p>
+  <h2 id="contact">Contact</h2>
+  <p>Leave your contact details and we will get back to you.</p>
 
-  <a class="btn" href="mailto:info@wellforce.energy">
-    Request a short discussion
-  </a>
+  <form action="https://formspree.io/f/xeeodwky" method="POST">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <input type="tel" name="phone" placeholder="Your phone number">
+    <textarea name="message" placeholder="Brief description (optional)"></textarea>
+    <input type="submit" value="Send request">
+  </form>
 
   <!-- FOOTER -->
   <footer>
@@ -189,3 +212,4 @@ footer {
 
 </body>
 </html>
+
